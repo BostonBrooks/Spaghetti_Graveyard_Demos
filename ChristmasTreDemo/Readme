@@ -1,0 +1,5 @@
+Type 
+
+gcc DrawTerrain.c -lcsfml-system -lcsfml-window -lcsfml-graphics -lm -g
+
+To compile
