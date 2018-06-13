@@ -1,0 +1,2 @@
+gcc 10_Main.c -lcsfml-system -lcsfml-graphics -lcsfml-window  -lm
+
