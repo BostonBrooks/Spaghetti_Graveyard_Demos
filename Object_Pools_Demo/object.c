@@ -29,7 +29,7 @@ int Increase_Pool(int);
 int New_Object(void);
 void Delete_Object(int);
 
-void List_Object(int);
+void Sort_Object(int);
 void DeList_Object(int);
 
 Object* Lookup_Object(int);
@@ -233,7 +233,7 @@ Object* Lookup_Object(int i){
     return (&(Pool[i / LEVEL2])[i % LEVEL2]);
 }
 
-void List_Object(int object_int){
+void Sort_Object(int object_int){
     //Remove from list
 
     DeList_Object(object_int);
@@ -457,7 +457,6 @@ void Restore_All(void){
         if (object_address->Prev == -1) List_Head = object_int;
         if (object_address->Next == -1) List_Tail = object_int;
 
-        //List_Object(object_int);
     }
 
     fclose(scores);
@@ -472,7 +471,6 @@ void Save_All(void){
 
     FILE *scores = fopen("scores.txt", "w");
     fprintf(scores, "Index Name Score Prev Next\n\n");
-    printf( "Index Name Score Prev Next\n\n");
     //Go through Pool[][] and save all data
     //Close scores.txt
 
@@ -485,13 +483,6 @@ void Save_All(void){
                    object_address = Lookup_Object(i * LEVEL2 + j);
                    if (object_address->In_Use != 0){
                         fprintf(scores, "%d %15s %d %d %d\n",
-                           i * LEVEL2 +j,
-                           object_address->Name,
-                           object_address->Score,
-                           object_address->Prev,
-                           object_address->Next
-                       );
-                        printf("%d %15s %d %d %d\n",
                            i * LEVEL2 +j,
                            object_address->Name,
                            object_address->Score,
