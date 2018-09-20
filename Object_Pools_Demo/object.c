@@ -308,9 +308,8 @@ void Print_All(void){
     while (object_int != -1){
 
         object_address = Lookup_Object(object_int);
-        //printf("%s    %d\n", object_address->Name, object_address->Score);
+        printf("%s    %d\n", object_address->Name, object_address->Score);
 
-        printf("%s    %d -- %d\n", object_address->Name, object_address->Score, object_address->In_Use); //debug
         assert(object_int != object_address->Next);
         object_int = object_address->Next;
 
