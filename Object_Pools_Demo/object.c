@@ -30,7 +30,7 @@ int New_Object(void);
 void Delete_Object(int);
 
 void Sort_Object(int);
-void DeList_Object(int);
+void DeSort_Object(int);
 
 Object* Lookup_Object(int);
 
@@ -57,7 +57,7 @@ void Set_Object_Score(int object_int, int Score);
 
 
 
-void DeList_Object (int object_int){
+void DeSort_Object (int object_int){
     //Remove from list
 
     Object* object_address = Lookup_Object(object_int);
@@ -115,7 +115,7 @@ void DeList_Object (int object_int){
 
 void Delete_Object(int object_int){
      // Remove from list
-     DeList_Object (object_int);
+     DeSort_Object (object_int);
 
      Object* object_address = Lookup_Object(object_int);
      object_address->In_Use = 0;
@@ -236,7 +236,7 @@ Object* Lookup_Object(int i){
 void Sort_Object(int object_int){
     //Remove from list
 
-    DeList_Object(object_int);
+    DeSort_Object(object_int);
 
 
     //Add to list
@@ -421,7 +421,7 @@ int Initialise_object_int(int object_int){
 
 
     } else { //if object specified is in "List" remove from list
-        DeList_Object(object_int);
+        DeSort_Object(object_int);
     }
 }
 
