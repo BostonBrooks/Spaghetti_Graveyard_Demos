@@ -5,7 +5,7 @@ void Print_All(void);
 
 int New_Object(void);
 
-void List_Object(int);
+void Sort_Object(int);
 
 void Set_Object_Name(int, char Name[16]);
 
