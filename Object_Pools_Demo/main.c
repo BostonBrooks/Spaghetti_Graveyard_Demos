@@ -49,7 +49,7 @@ int main (void) {
 
 
 
-        List_Object(object_int);
+        Sort_Object(object_int);
 
     }
 
