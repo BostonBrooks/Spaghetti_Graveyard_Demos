@@ -28,10 +28,6 @@ int main(void){
     while(1){
         Handle_Input();
 
-Command_List_All();
-printf("undo head: %d, undo Tail %d, redo_head %d, redo tail %d\n", Undo_Head, Undo_Tail, Redo_Head, Redo_Tail);  printf("\n");
-Circle_List_All();
-printf("List head: %d, Tail %d\n, available head: %d, Tail %d, in use head: %d, Tail %d", Circles_Head, Circles_Tail, Circle_Available_Head, Circle_Available_Tail, Circle_In_Use_Head, Circle_In_Use_Tail);  printf("\n");
 
         Draw_Circles();
 
@@ -69,19 +65,18 @@ int Handle_Input(void){
                 return 0;
 
             } else if (event.mouseButton.button == sfMouseRight){
-DB(1);
+
                 if (event.mouseButton.x < 0) continue;
                 if (event.mouseButton.x > 800) continue;
                 if (event.mouseButton.y < 0) continue;
                 if (event.mouseButton.y > 600) continue;
 
-printf("mouse x = %d, mouse y = %d", event.mouseButton.x, event.mouseButton.y);fflush(stdout);
         
                 int Circle_Int = Find_Nearest_Circle(
                     event.mouseButton.x,
                     event.mouseButton.y
                 );
-printf("Circle_Int, %d", Circle_Int);fflush(stdout);
+
                 if (Circle_Int >= 0) {
                     Delete_Circle_Event(Circle_Int);
                     return 0;
