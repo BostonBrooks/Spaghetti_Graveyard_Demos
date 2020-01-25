@@ -153,7 +153,6 @@
 
 //if address not given, find the next available address.
 //remove from available list, set in use flag to 1
-//////update available/in use head & tail/////TODO
 //add to in use list, return address
 #define DECLARE_POOL_NEW(CLASS, LEVEL_1, LEVEL_2)\
     int CONCAT2(CLASS, _New)(int Address){\
@@ -199,7 +198,6 @@
             CONCAT2(CLASS, _In_Use_Tail) = Address;\
             return Address;\
         } else {\
-DB(0)\
             int i = Address / LEVEL_2;\
             int j = Address % LEVEL_2;\
 \
@@ -217,28 +215,23 @@ DB(1)\
             CLASS* Prev;\
             CLASS* Next;\
             if (Prev_Int == -1 && Next_Int == -1){\
-DB(2)\
                 \
                 CONCAT2(CLASS, _Available_Head) = -1;\
                 CONCAT2(CLASS, _Available_Tail) = -1;\
 \
             } else if (Prev_Int == -1){\
-DB(3)\
-printf("\nAvailable Head: %d, Address: %d\n", CONCAT2(CLASS, _Available_Head), Address); fflush(stdout);\
                 assert(CONCAT2(CLASS, _Available_Head) == Address);\
                 Next = CONCAT2(CLASS, s_sudo)(Next_Int);\
                 Next->Pool_Prev = -1;\
                 CONCAT2(CLASS, _Available_Head) = Next_Int;\
                 \
             } else if (Next_Int == -1){\
-DB(4)\
                 assert(CONCAT2(CLASS, _Available_Tail) == Address);                \
                 Prev = CONCAT2(CLASS, s_sudo)(Prev_Int);\
                 Prev->Pool_Next = -1;\
                 CONCAT2(CLASS, _Available_Tail) = Prev_Int;\
                 \
             } else {\
-DB(5)\
 \
                 Prev =  CONCAT2(CLASS, s_sudo)(Prev_Int);\
                 Next =  CONCAT2(CLASS, s_sudo)(Next_Int);\
@@ -249,14 +242,11 @@ DB(5)\
             }\
 \
             if (CONCAT2(CLASS, _In_Use_Head) == -1){\
-DB(6)\
                 assert(CONCAT2(CLASS, _In_Use_Tail) == -1);\
                 CONCAT2(CLASS, _In_Use_Head) = Address;\
                 CONCAT2(CLASS, _In_Use_Tail) = Address;\
                 Object->Pool_Prev = -1;\
                 Object->Pool_Next = -1;\
-            } else {\
-DB(7)\
                 \
                 Object->Pool_Next = -1;\
                 Object->Pool_Prev = CONCAT2(CLASS, _In_Use_Tail);\
@@ -402,4 +392,3 @@ DB(7)\
     DECLARE_POOL_DELETE    (CLASS, LEVEL_1, LEVEL_2)\
     DECLARE_POOL_LOOKUP    (CLASS, LEVEL_1, LEVEL_2)\
     DECLARE_POOL_FREE_ALL  (CLASS, LEVEL_1, LEVEL_2)\
-
