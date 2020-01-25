@@ -1,0 +1,13 @@
+Left click/drag to create circles. Right click to delete a circle.
+Left arrow to undo. Right arrow to redo. Press R to replay progress.
+
+This code uses pools, expanding arrays of objects that can be quickly
+accessed/deleted without having to go through malloc() and free().
+Every object in a pool comes with an integer address so the session
+can be saved and resored without losing track of object pointers.
+
+The code stores a list of function calls on a stack to allow undo-ing
+of commands, and annother stack allowing redo-ing of commands.
+
+The code stores a queue of commands that can be stepped through to replay
+every command made from the starting point.
