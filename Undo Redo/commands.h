@@ -73,7 +73,6 @@ int Command_Create_Circle(int Command_Int){
 
 //unregister command
     Command* Object = Commands(Command_Int);
-//printf("Create %d, %d, %d \n", Object->List_Prev, Object->Pool_Self, Object->List_Next); fflush(stdout);
 
     Command_Unregister(Command_Int);
 
@@ -87,13 +86,7 @@ int Command_Create_Circle(int Command_Int){
     Circle* Circ = Circles(Circle_Int);
 
 
-//printf("Circ Created %d, %d, %d \n", Circ->List_Prev, Circ->Pool_Self, Circ->List_Next); fflush(stdout);
-
-
-    
-   // printf("% %d, %d, %d \n", Circ->List_Prev, Circ->Pool_Self, Circ->List_Next);
-
-    
+  
 //update command
 
     if (Object->Type == UNDO){
@@ -111,7 +104,6 @@ int Command_Delete_Circle(int Command_Int){
 //unregister command
     Command* Object = Commands(Command_Int);
 
-//printf("Delete %d, %d, %d \n", Object->List_Prev, Object->Pool_Self, Object->List_Next); fflush(stdout);
 
     Command_Unregister(Command_Int);
 
