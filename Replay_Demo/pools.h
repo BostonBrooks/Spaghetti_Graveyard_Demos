@@ -247,6 +247,7 @@
                 Object->Pool_Prev = -1;\
                 Object->Pool_Next = -1;\
                 \
+            } else {\
                 Object->Pool_Next = -1;\
                 Object->Pool_Prev = CONCAT2(CLASS, _In_Use_Tail);\
                 CLASS* Tail = CONCAT2(CLASS, s)(CONCAT2(CLASS, _In_Use_Tail));\
