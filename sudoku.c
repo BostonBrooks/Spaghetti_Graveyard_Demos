@@ -3,7 +3,7 @@
 
 int game[81]
 
-    = {0, 0, 0, 2, 0, 4, 0, 0, 0,
+    = {8, 0, 0, 2, 0, 4, 0, 0, 0,
        0, 0, 3, 0, 9, 0, 2, 0, 0,
        0, 9, 6, 0, 0, 0, 3, 8, 0,
        7, 0, 0, 5, 0, 9, 0, 0, 3,
@@ -25,10 +25,21 @@ int main(void){
     int i, j, flag;
     int cell = 0;
 
-    for (i = 1; i <= 9; i++){
-        flag = try(cell, i);
-        if (flag == SUCCESS) break;
+//recursively try every possible permutation
+
+    if (game[cell] == 0){ 
+
+        for (i = 1; i <= 9; i++){
+            flag = try(cell, i);
+            if (flag == SUCCESS) break;
+        }
+
+    } else {
+        flag = try(cell, game[cell]);
+
     }
+
+//print solution
 
     if (flag == FAIL) {
 
@@ -81,8 +92,6 @@ int try(int cell, int number){
 
     return(FAIL);
 
-    
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
 int check (int cell, int number){
