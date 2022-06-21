@@ -1,0 +1,87 @@
+sfTexture:
+
+Number of Textures: 256
+
+VAddress, File, Smooth:
+
+0, "Tree.png", T
+1, "Lights0.png", T
+2, "Lights1.png", T
+3, "Lights2.png", T
+4, "Lights3.png", T
+5, "Lights4.png", T
+6, "Lights5.png", T
+7, "Tree.bmp", T
+8, "SpriteSheet.bmp", T
+9, "Decal.png", F
+10, "Splash.png", F
+11, "Terrain.bmp", F
+12, "NULL.bmp", T
+13, "Sphere.png", T
+14, "VP_Test.png", T
+
+sfSprite:
+
+Number of Sprites: 256
+
+label, VAddress, sfTexture, left, top, width, height, originx, originy, scalex, scaley
+
+"Tree1", 0, 0, 0, 0, 300, 450, 158, 444, 1, 1
+"Lights0", 1, 1, 0, 0, 300, 450, 158, 444, 1, 1
+"Lights1", 2, 2, 0, 0, 300, 450, 158, 444, 1, 1
+"Lights2", 3, 3, 0, 0, 300, 450, 158, 444, 1, 1
+"Lights3", 4, 4, 0, 0, 300, 450, 158, 444, 1, 1
+"Lights4", 5, 5, 0, 0, 300, 450, 158, 444, 1, 1
+"Lights5", 6, 6, 0, 0, 300, 450, 158, 444, 1, 1
+"Tree2", 7,  7, 0, 0, 300, 450, 158, 421, 1, 1
+"Grass1", 8,  8, 6, 122, 36, 42, 19, 42, 1, 1
+"Grass2", 9,  8, 58, 115, 24, 47, 13, 48, 1, 1
+"Grass3", 10,  8, 98, 143, 42, 20, 20, 18, 1, 1
+"Grass4", 11,  8, 153, 137, 43, 25, 23, 23, 1, 1
+"Grass5", 12,  8, 208, 132, 51, 32, 26, 28, 1, 1
+"CrossbowR", 13,  8, 2, 2, 67, 99, 23, 96, 1, 1
+"CrossbowL", 14,  8, 2, 2, 67, 99, 23, 96, -1, 1
+"SkeletonR", 15,  8, 78, 3, 60, 103, 19, 100, 1, 1
+"SkeletonL", 16,  8, 78, 3, 60, 103, 19, 100, -1, 1
+"ImpR", 17,  8, 148, 35, 62, 82, 18, 71, 1, 1
+"ImpL", 18,  8, 148, 35, 62, 72, 18, 71, -1, 1
+"ZombieR", 19,  8, 210, 0, 58, 107, 32, 104, 1, 1
+"ZombieL", 20,  8, 210, 0, 58, 107, 32, 104, -1, 1
+"CowR", 21,  8, 280, 9, 93, 155, 33, 152, 1, 1
+"CowL", 22,  8, 280, 9, 93, 155, 33, 152, -1, 1
+"ThornyDevilR", 23,  8, 375, 15, 85, 97, 56, 95, 1, 1
+"ThornyDevilL", 24,  8, 375, 15, 85, 97, 56, 95, -1, 1
+"FrilledNeckR", 25,  8, 473, 13, 85, 96, 55, 95, 1, 1
+"FrilledNeckL", 26,  8, 473, 13, 85, 96, 55, 95, -1, 1
+"Decal", 27, 9, 0, 0, 1920, 1080, 0, 0, 1, 1
+"Splash", 28, 10, 0, 0, 1282, 1038, 0, 0, 1, 1
+"Sphere", 29, 13, 0, 0, 52, 52, 26, 26, 1, 1
+"Background", 30, 14, 0, 0, 280, 47, 0, 0, 1, 1
+"Ground", 31, 14, 0, 59, 280, 47, 0, 0, 1, 1
+"Drawables", 32, 14, 0, 128, 280, 47, 0, 0, 1, 1
+"Highlights", 33, 14, 0, 198, 280, 47, 0, 0, 1, 1
+"Healthbars", 34, 14, 0, 277, 280, 47, 0, 0, 1, 1
+"Auras", 35, 14, 0, 337, 280, 47, 0, 0, 1, 1
+"Ground Sprite", 36, 14, 0, 389, 280, 110, 0, 0, 1, 1
+"Terrain", 37, 11, 0, 0, 512, 512, 0, 0, 1, 1
+
+Animation:
+
+Number of Animations: 256
+
+label, VAddress, Vdrawfunction, angles, frames, sprites[]
+
+"Tree1", 0, 0, 1, 1, 0
+"Lights", 1, 0, 1, 6, 1, 2, 3, 4, 5, 6
+"Tree2", 2, 0, 1, 1, 7
+"Grasses", 3, 0, 8, 1, 8, 9, 10, 11, 12, 12, 12, 12
+"Crossbow", 4, 0, 2, 1, 13, 14
+"Skeleton", 5, 0, 2, 1, 15, 16
+"Imp", 6, 0, 2, 1, 17, 18
+"Zombie", 7, 0, 2, 1, 19, 20
+"Cow", 8, 0, 2, 1, 21, 22
+"ThornyDevil", 9, 0, 2, 1, 23, 24
+"FrilledNeck", 10, 0, 2, 1, 25, 26
+
+
+End:
