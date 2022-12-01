@@ -1,0 +1,5 @@
+I've been re-writing my entire code-base to properly use headers and source files.
+In the past I had just one source file and the bulk of my code was in header files.
+I have more or less implemented all of the features I had implemented with my previous spaghetti code.
+
+A screen recording of my latest demo can be found at https://youtu.be/LGudJP674UI
