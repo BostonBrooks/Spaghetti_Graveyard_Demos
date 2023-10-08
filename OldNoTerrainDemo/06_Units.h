@@ -444,7 +444,7 @@ int IncrementR (void) {
             sfRenderWindow_drawSprite(window, r->Type->Facet[r->FacetNumber], NULL);
             
             r = r->SortedNext;
-            ProjectileLocation = IJtoXY (r->location);
+            ProjectileLocation = IJtoXY (r->Location);
 }
 
 
